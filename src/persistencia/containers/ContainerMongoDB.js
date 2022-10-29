@@ -1,8 +1,8 @@
-import logger from "../../logger/logger.js";
+import logger from '../../logger/logger.js';
 
 class ContainerMongoDB {
 	constructor(model) {
-		this.model = model
+		this.model = model;
 	}
 
 	async getAll() {
@@ -10,7 +10,7 @@ class ContainerMongoDB {
 			const docs = await this.model.find({});
 			return docs;
 		} catch (error) {
-			logger.error({ message: `error al obtener los documentos ${error}`});
+			logger.error({ message: `error al obtener los documentos ${error}` });
 		}
 	}
 
@@ -19,16 +19,15 @@ class ContainerMongoDB {
 			const docs = await this.model.findById(id);
 			return docs;
 		} catch (error) {
-			logger.error({ message: `error al obtener el documento ${error}`});
+			logger.error({ message: `error al obtener el documento ${error}` });
 		}
 	}
 
-
 	async saveOne(obj) {
 		try {
-			return await this.model.collection.insertOne(obj)
+			return await this.model.collection.insertOne(obj);
 		} catch (error) {
-			logger.error({ message: `error al subir el documento ${error}`});
+			logger.error({ message: `error al subir el documento ${error}` });
 		}
 	}
 
@@ -36,17 +35,16 @@ class ContainerMongoDB {
 		const objetos = await this.getAll();
 		const object = objetos.find((obj) => obj._id === id);
 		if (object === undefined) {
-			logger.error({ message: `error al actualizar el documento, no se encontro el id: ${id}`});
+			logger.error({
+				message: `error al actualizar el documento, no se encontro el id: ${id}`,
+			});
 		} else {
 			Object.assign(object, objeto);
 		}
 		try {
-			await this.model.replaceOne(
-				{ _id: id },
-				{ ...object.toObject()}
-			);
+			await this.model.replaceOne({ _id: id }, { ...object.toObject() });
 		} catch (error) {
-			logger.error({ message: `error al actualizar el documento ${error}`});
+			logger.error({ message: `error al actualizar el documento ${error}` });
 		}
 	}
 
@@ -56,7 +54,7 @@ class ContainerMongoDB {
 				_id: id,
 			});
 		} catch (error) {
-			logger.error({ message: `error al borrar el documento ${error}`});
+			logger.error({ message: `error al borrar el documento ${error}` });
 		}
 	}
 }

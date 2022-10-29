@@ -1,5 +1,6 @@
-import ProductsDaoMongoDb from '../persistencia/daos/ProductsDaoMongoDb.js';
-const productApi = new ProductsDaoMongoDb()
+import ProductsDaoFactory from '../persistencia/daos/Products/ProductsDaoFactory.js';
+import ProductsRepo from '../persistencia/repository/ProductsRepo.js';
+const productApi = new ProductsRepo()
 
 const getProducts = async (query) => {
     const { order, ...remQuerys } = query;

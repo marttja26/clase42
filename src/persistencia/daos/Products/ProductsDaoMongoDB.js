@@ -1,7 +1,9 @@
-import ContainerMongoDB from '../containers/ContainerMongoDB.js';
-import { ProductsModel } from '../models/Products.js';
-import logger from '../../logger/logger.js';
+import ContainerMongoDB from '../../containers/ContainerMongoDB.js';
+import { ProductsModel } from '../../models/Products.js';
+import logger from '../../../logger/logger.js';
 
+
+let instance
 class ProductsDaoMongoDb extends ContainerMongoDB {
 	constructor() {
 		super(ProductsModel);
@@ -36,6 +38,13 @@ class ProductsDaoMongoDb extends ContainerMongoDB {
 		} catch (error) {
 			logger.error({ message: `error al obtener las queries ${error}` });
 		}
+	}
+
+	static getInstance() {
+		if(!instance) {
+			instance = new ProductsDaoMongoDb()
+		}
+		return instance
 	}
 }
 

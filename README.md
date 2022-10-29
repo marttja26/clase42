@@ -1,4 +1,4 @@
-https://backendprojectcoder.herokuapp.com
+Hola Jorge no entendi como implementar los cambios con respecto al DTO y el patron Repository, creo que el patron singleton y factory estan bien implementados.
 
 
 NODEMON:

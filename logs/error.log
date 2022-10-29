@@ -18,3 +18,6 @@
 {"level":"error","message":"error al obtener las queries ReferenceError: Products is not defined"}
 {"level":"error","message":"error al obtener las queries ReferenceError: Products is not defined"}
 {"level":"error","message":"error al obtener las queries ReferenceError: Products is not defined"}
+{"level":"error","message":"error al obtener los productos ReferenceError: ProductDto is not defined"}
+{"level":"error","message":"error al obtener los productos ReferenceError: ProductDto is not defined"}
+{"level":"error","message":"error al enviar un mail Error: Missing credentials for \"PLAIN\""}

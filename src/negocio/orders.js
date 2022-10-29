@@ -1,9 +1,9 @@
-import OrdersDaoMongoDb from '../persistencia/daos/OrdersDaoMongoDB.js';
+import OrdersDaoFactory from '../persistencia/daos/Orders/OrdersDaoFactory.js';
 import { sendEmail } from '../utils/mail.js';
 // import { sendSMS, sendWhatsapp } from '../utils/twilio.js';
 import logger from '../logger/logger.js';
 
-const orderApi = new OrdersDaoMongoDb()
+const orderApi = OrdersDaoFactory.getDao()
 
 const submitOrder = async (body) => {
 	try {

@@ -1,4 +1,5 @@
 import logger from '../../logger/logger.js';
+import mongoose from 'mongoose';
 
 class ContainerMongoDB {
 	constructor(model) {
@@ -8,53 +9,118 @@ class ContainerMongoDB {
 	async getAll() {
 		try {
 			const docs = await this.model.find({});
-			return docs;
+			return {
+				status: 'Success',
+				message: 'Se obtuvieron correctamente los documentos',
+				docs,
+			};
 		} catch (error) {
 			logger.error({ message: `error al obtener los documentos ${error}` });
+			return {
+				status: 'Error',
+				message: 'No se pudieron obtener los documentos',
+			};
 		}
 	}
 
 	async get(id) {
-		try {
-			const docs = await this.model.findById(id);
-			return docs;
-		} catch (error) {
-			logger.error({ message: `error al obtener el documento ${error}` });
+		const validId = mongoose.Types.ObjectId.isValid(id);
+		if (validId) {
+			try {
+				const doc = await this.model.findById(id);
+				return {
+					status: 'Success',
+					message: 'Se obtuvo correctamente el documento',
+					doc,
+				};
+			} catch (error) {
+				logger.error({ message: `error al obtener el documento ${error}` });
+				return { status: 'Error', message: 'No se pudo obtener el documento' };
+			}
+		} else {
+			logger.error({
+				message: `error al obtener el documento, no se encontro el id: ${id}`,
+			});
+			return {
+				status: 'Error',
+				message: `No se pudo obtener el documento con el id: ${id}`,
+			};
 		}
 	}
 
 	async saveOne(obj) {
 		try {
-			return await this.model.collection.insertOne(obj);
+			const doc = await this.model.collection.insertOne(obj);
+			console.log(typeof this.model)
+			return {
+				status: 'Success',
+				message: `El producto con el id ${doc.insertedId} se agrego correctamente.`,
+			};
 		} catch (error) {
-			logger.error({ message: `error al subir el documento ${error}` });
+			logger.error({ message: `error al guardar el documento ${error}` });
+			return { status: 'Error', message: `Error al guardar el documento.` };
 		}
 	}
 
 	async update(objeto, id) {
-		const objetos = await this.getAll();
-		const object = objetos.find((obj) => obj._id === id);
-		if (object === undefined) {
+		const validId = mongoose.Types.ObjectId.isValid(id);
+		let objectExist;
+		if (validId) {
+			objectExist = await this.model.findById(id);
+		}
+		if (objectExist) {
+			try {
+				await this.model.findByIdAndUpdate(id, objeto);
+				return {
+					status: 'Success',
+					message: `El documento con el id ${id} se edito correctamente.`,
+				};
+			} catch (error) {
+				logger.error({ message: `error al actualizar el documento ${error}` });
+				return {
+					status: 'Error',
+					message: `Error al actualizar el documento.`,
+				};
+			}
+		} else {
 			logger.error({
 				message: `error al actualizar el documento, no se encontro el id: ${id}`,
 			});
-		} else {
-			Object.assign(object, objeto);
-		}
-		try {
-			await this.model.replaceOne({ _id: id }, { ...object.toObject() });
-		} catch (error) {
-			logger.error({ message: `error al actualizar el documento ${error}` });
+			return {
+				status: 'Error',
+				message: `error al actualizar el documento, no se encontro el id: ${id}`,
+			};
 		}
 	}
 
 	async delete(id) {
-		try {
-			await this.model.deleteOne({
-				_id: id,
+		const validId = mongoose.Types.ObjectId.isValid(id);
+		let objectExist;
+		if (validId) {
+			objectExist = await this.model.findById(id);
+		}
+		if (objectExist) {
+			try {
+				await this.model.findByIdAndDelete(id);
+				return {
+					status: 'Success',
+					message: `El documento con el id ${id} se elimino correctamente.`,
+				};
+			} catch (error) {
+				logger.error({ message: `error al borrar el documento ${error}` });
+				return {
+					status: 'Error',
+					message: `Error al borrar el documento.`,
+				};
+			}
+		} else {
+			logger.error({
+				message: `error al borrar el documento, no se encontro el id: ${id}`,
 			});
-		} catch (error) {
-			logger.error({ message: `error al borrar el documento ${error}` });
+			return {
+				status: 'Error',
+				message: `error al borrar el documento, no se encontro el id: ${id}`,
+			};
 		}
 	}
 }

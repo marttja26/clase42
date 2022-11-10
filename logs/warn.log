@@ -328,3 +328,12 @@
 {"level":"warn","message":" Ruta GET /uploads/undefined no implementada."}
 {"level":"warn","message":" Ruta GET /uploads/undefined no implementada."}
 {"level":"warn","message":" Ruta GET /uploads/undefined no implementada."}
+{"level":"warn","message":" Ruta GET / no implementada."}
+{"level":"warn","message":" Ruta GET /favicon.ico no implementada."}
+{"level":"warn","message":" Ruta GET /favicon.ico no implementada."}
+{"level":"warn","message":" Ruta GET /uploads/avatar-1666321118494.png no implementada."}
+{"level":"warn","message":" Ruta GET /producto no implementada."}
+{"level":"warn","message":" Ruta GET /32123 no implementada."}
+{"level":"warn","message":" Ruta GET /uploads/undefined no implementada."}
+{"level":"warn","message":" Ruta GET /productos/queries no implementada."}
+{"level":"warn","message":" Ruta GET /favicon.ico no implementada."}

@@ -38,6 +38,7 @@ export default class ProductsRepo {
     }
 
     async delete(id) {
-        await this.dao.delete(id)
+        const res = this.dao.delete(id)
+        return res
     }
 }

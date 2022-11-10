@@ -1,4 +1,9 @@
-Hola Jorge no entendi como implementar los cambios con respecto al DTO y el patron Repository, creo que el patron singleton y factory estan bien implementados.
+admin acc
+email: admin@gmail.com
+pwd: 1234
+
+run npm test para realizar el test suite.
+
 
 
 NODEMON:

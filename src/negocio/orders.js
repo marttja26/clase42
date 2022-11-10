@@ -7,7 +7,6 @@ const orderApi = OrdersDaoFactory.getDao()
 
 const submitOrder = async (body) => {
 	try {
-		// const result = await Orders.collection.insertOne(body);
 		const result = await orderApi.saveOne(body)
 		await sendEmail('Nuevo pedido de', JSON.stringify(body))
 		// await sendWhatsapp('Nuevo pedido de', JSON.stringify(body))

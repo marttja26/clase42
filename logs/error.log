@@ -21,3 +21,56 @@
 {"level":"error","message":"error al obtener los productos ReferenceError: ProductDto is not defined"}
 {"level":"error","message":"error al obtener los productos ReferenceError: ProductDto is not defined"}
 {"level":"error","message":"error al enviar un mail Error: Missing credentials for \"PLAIN\""}
+{"level":"error","message":"error al actualizar el documento CastError: Cast to ObjectId failed for value \"321321\" (type string) at path \"_id\" for model \"products\""}
+{"level":"error","message":"error al borrar el documento, no se encontro el id: 636b228e35faf13f07388091"}
+{"level":"error","message":"error al borrar el documento, no se encontro el id: 636b228e35faf13f07388091"}
+{"level":"error","message":"error al actualizar el documento, no se encontro el id: 636b29cafd2c70f48b94ae26"}
+{"level":"error","message":"error al borrar el documento, no se encontro el id: 636b29cafd2c70f48b94ae26"}
+{"level":"error","message":"error al actualizar el documento, no se encontro el id: 636b29cafd2c70f48b94ae22"}
+{"level":"error","message":"error al actualizar el documento, no se encontro el id: 123321"}
+{"level":"error","message":"error al enviar un mail Error: Missing credentials for \"PLAIN\""}
+{"level":"error","message":"error al borrar el documento, no se encontro el id: 636b5e7841a01285bebfce43"}
+{"level":"error","message":"error al borrar el documento, no se encontro el id: 636b5e7841a01285bebfce43"}
+{"level":"error","message":"error al borrar el documento, no se encontro el id: 636b5e7841a01285bebfce43"}
+{"level":"error","message":"error al borrar el documento, no se encontro el id: 636b5e7841a01285bebfce43"}
+{"level":"error","message":"error al borrar el documento, no se encontro el id: 636b5e7841a01285bebfce43"}
+{"level":"error","message":"error al borrar el documento, no se encontro el id: 636b5e7841a01285bebfce43"}
+{"level":"error","message":"error al actualizar el documento, no se encontro el id: 636b29cafd2c70f48b94ae26"}
+{"level":"error","message":"error al actualizar el documento, no se encontro el id: 636b29cafd2c70f48b94ae26"}
+{"level":"error","message":"error al actualizar el documento, no se encontro el id: 636b29cafd2c70f48b94ae26"}
+{"level":"error","message":"error al actualizar el documento, no se encontro el id: 636b29cafd2c70f48b94ae26"}
+{"level":"error","message":"error al actualizar el documento, no se encontro el id: undefined"}
+{"level":"error","message":"error al actualizar el documento, no se encontro el id: undefined"}
+{"level":"error","message":"error al borrar el documento, no se encontro el id: 636b75f5e2733e3a5ddad712"}
+{"level":"error","message":"error al borrar el documento, no se encontro el id: 636b7abca44da7d89ce7caeb"}
+{"level":"error","message":"error al borrar el documento, no se encontro el id: 636b7b3cff6eb3e28aeccabc"}
+{"level":"error","message":"error al borrar el documento, no se encontro el id: 636b29cafd2c70f48b94ae26"}
+{"level":"error","message":"error al actualizar el documento, no se encontro el id: 636b29cafd2c70f48b94ae27"}
+{"level":"error","message":"error al actualizar el documento, no se encontro el id: 636b29cafd2c70f48b94ae27"}
+{"level":"error","message":"error al actualizar el documento, no se encontro el id: 636b29cafd2c70f48b94ae27"}
+{"level":"error","message":"error al borrar el documento, no se encontro el id: 636c07d80854013cad5f8b07"}
+{"level":"error","message":"error al borrar el documento MongooseError: Query was already executed: products.findOneAndDelete({ _id: new ObjectId(\"636c0f69eac24..."}
+{"level":"error","message":"error al borrar el documento, no se encontro el id: 636c0f69eac2463fd01d988f"}
+{"level":"error","message":"error al borrar el documento MongooseError: Query was already executed: products.findOneAndDelete({ _id: new ObjectId(\"636c1324d1dc7..."}
+{"level":"error","message":"error al borrar el documento, no se encontro el id: 636c1324d1dc7cbd6a928f29"}
+{"level":"error","message":"error al actualizar el documento, no se encontro el id: 636c20d4aaf9c31105253328"}
+{"level":"error","message":"error al borrar el documento, no se encontro el id: 636c20d4aaf9c31105253328"}
+{"level":"error","message":"error al borrar el documento, no se encontro el id: 634b1df2e22d1041fc399f86"}
+{"level":"error","message":" Error en el servidor Error: listen EADDRINUSE: address already in use :::8080"}
+{"level":"error","message":" Error en el servidor Error: listen EADDRINUSE: address already in use :::8080"}
+{"level":"error","message":"error al guardar el documento ReferenceError: model is not defined"}
+{"level":"error","message":"error al actualizar el documento, no se encontro el id: undefined"}
+{"level":"error","message":"error al actualizar el documento, no se encontro el id: undefined"}
+{"level":"error","message":"error al actualizar el documento, no se encontro el id: undefined"}
+{"level":"error","message":"error al actualizar el documento, no se encontro el id: undefined"}
+{"level":"error","message":"error al actualizar el documento, no se encontro el id: undefined"}
+{"level":"error","message":"error al actualizar el documento, no se encontro el id: undefined"}
+{"level":"error","message":"error al actualizar el documento, no se encontro el id: undefined"}
+{"level":"error","message":"error al actualizar el documento, no se encontro el id: undefined"}
+{"level":"error","message":"error al actualizar el documento, no se encontro el id: undefined"}
+{"level":"error","message":"error al actualizar el documento, no se encontro el id: undefined"}
+{"level":"error","message":"error al actualizar el documento, no se encontro el id: undefined"}
+{"level":"error","message":"error al actualizar el documento, no se encontro el id: undefined"}
+{"level":"error","message":"error al actualizar el documento, no se encontro el id: undefined"}
+{"level":"error","message":"error al actualizar el documento, no se encontro el id: undefined"}
+{"level":"error","message":"error al borrar el documento, no se encontro el id: undefined"}

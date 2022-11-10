@@ -15,6 +15,12 @@ const getAuth = (req, res) => {
 	res.json({ token: true });
 };
 
+const getAdmin = (req, res) => {
+	const { method, url } = req;
+	logger.info(` Peticion a ${method} ${url} recibida`);
+	res.json({ token: true });
+};
+
 const logoutController = (req, res) => {
 	const { method, url, session } = req;
 	logger.info(` Peticion a ${method} ${url} recibida`);
@@ -61,6 +67,7 @@ const loginController = (req, res, next) => {
 export default {
 	getUserController,
 	getAuth,
+	getAdmin,
 	logoutController,
 	registerController,
 	loginController,

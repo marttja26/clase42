@@ -18,9 +18,20 @@ const isAuth = (req, res, next) => {
 	if (req.isAuthenticated()) {
 		next();
 	} else {
-		res.json({token: false, message: 'Not connected.'})
+		res.json({ token: false, message: 'Not connected.' });
 	}
 };
 
+const isAdmin = (req, res, next) => {
+	if (req.isAuthenticated()) {
+		if (req.user.admin) {
+			next();
+		} else {
+			res.json({ token: false, message: 'Not authorized.' });
+		}
+	} else {
+		res.json({ token: false, message: 'Not connected.' });
+	}
+};
 
-export { isAuth, upload };
+export { isAdmin, isAuth, upload };
